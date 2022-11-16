@@ -47,8 +47,8 @@ public class CommonController {
             //String basePath = getFileBasePath();
 //            String tarFile = basePath + "\\" + "translate_file.mp3";
 //            String srcFile = basePath + "\\" + "translate_file.pcm";
-            String tarFile = System.getProperties().getProperty("user.home") +  File.separator + "translate_file.mp3";
-            String srcFile = System.getProperties().getProperty("user.home") +  File.separator + "translate_file.pcm";
+            String tarFile = "/home/xuuxxi/translate_file.mp3";
+            String srcFile = "/home/xuuxxi/translate_file.pcm";
 
             if(!PcmTransUtil.convertAudioFiles(srcFile, tarFile).equals("ok")) return;
 
