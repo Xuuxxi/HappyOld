@@ -44,9 +44,11 @@ public class CommonController {
     @GetMapping("/download")
     public void download(HttpServletResponse response){
         try{
-            String basePath = getFileBasePath();
-            String tarFile = basePath + "\\" + "translate_file.mp3";
-            String srcFile = basePath + "\\" + "translate_file.pcm";
+            //String basePath = getFileBasePath();
+//            String tarFile = basePath + "\\" + "translate_file.mp3";
+//            String srcFile = basePath + "\\" + "translate_file.pcm";
+            String tarFile = System.getProperties().getProperty("user.home") +  File.separator + "translate_file.mp3";
+            String srcFile = System.getProperties().getProperty("user.home") +  File.separator + "translate_file.pcm";
 
             if(!PcmTransUtil.convertAudioFiles(srcFile, tarFile).equals("ok")) return;
 
