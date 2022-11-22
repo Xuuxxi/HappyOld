@@ -32,6 +32,11 @@ public class UtilsController {
         else return R.error(res);
     }
 
+    @PostMapping("/busInfo")
+    public R<JSONObject> getBusOldInfo(@RequestParam String origin, @RequestParam String destination, @RequestParam String city){
+        return R.success(BusInfo.getBusInfo(origin, destination, city));
+    }
+
     @PostMapping("/getAnsInfo")
     public R<JSONObject> getAnsInfo(@RequestParam String city, @RequestParam String origin, @RequestParam String destination){
         return R.success(BusInfoV2.getAnsInfo(city, origin, destination));
